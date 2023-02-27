@@ -1,0 +1,110 @@
+.dummy{
+	color : black;
+}
+.fonttext{
+	background-color: rgb(103, 70, 70);
+	text-align: center;
+	font-size: 30px;
+}
+.span {
+  content: "\2103";
+}
+
+
+body {
+	background: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);
+}
+.weather_wrapper{
+	    width: 400px;
+    margin: 0 auto;
+}
+.weatherCard{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+}
+.currentTemp{
+	    width: 100%;
+    height: 100%;
+	background: rgb(243,243,243);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.currentWeather{
+	width: 55%;
+    height: 100%;
+    background: rgb(1 68 134);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.temp{
+        font-size: 54px;
+    text-align: center;
+    display: block;
+    font-weight: 300;
+    color: rgb(0 22 57);
+    padding: 20px 0 0;
+    font-style: italic;
+}
+ .location{
+	color: rgb(0 22 57);
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 30px;
+	display: block;
+ } 
+.conditions{
+	    font-family: weathericons;
+    font-size: 54px;
+    display: block;
+    padding: 20px 0 0;
+    text-align: center;
+}
+.info{
+	width: 180px;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: rgb(42, 178, 234);
+	font-weight: 700;
+	color: rgb(255, 255, 255);
+	text-align: center;
+}
+.rain {
+	width: 50%;
+	position: absolute;
+	left: 10px;
+	word-spacing: 60px;
+	top: 3px;
+}
+.rain::before{
+	display: block;
+	content: '\f04e';
+	font-family: weathericons;
+	font-size: 40px;
+	left: 6px;
+	top: -4px;
+	position: absolute;
+}
+.wind {
+	width: 50%;
+	right: -10px;
+	position: absolute;
+	word-spacing: 60px;
+	top: 3px;
+}
+.wind::before{
+	display: block;
+	content: '\f050';
+	font-family: weathericons;
+	font-size: 25px;
+	left: -10px;
+	position: absolute;
+	top: 5px;
+}

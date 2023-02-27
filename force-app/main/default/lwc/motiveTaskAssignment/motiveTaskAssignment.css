@@ -1,0 +1,7 @@
+.dummy{
+	color : black;
+}
+.mainclass{
+	display: flex;
+	justify-content: space-between;
+}

@@ -1,0 +1,23 @@
+<template>
+     <table>
+        <tr>
+            <th> </th>
+            <th>Name</th>
+            <th>Type</th>
+        </tr>
+        <template for:each={column} for:item="obj">
+        <tr key={obj.Id}>
+         <th>
+            <lightning-input type="checkbox" onchange={handlechange}></lightning-input>
+         </th>
+         <th>
+            {obj.Name}
+         </th>
+         <th>
+            {obj.Type}
+         </th>
+        </tr>
+ 
+        </template>
+     </table>
+</template>

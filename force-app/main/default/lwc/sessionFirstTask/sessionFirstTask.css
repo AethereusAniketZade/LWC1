@@ -1,0 +1,18 @@
+.dummy{
+	color : black;
+}
+th {
+	background-color: rgb(243,242,242);
+}
+table, td, th {
+  border: 1px solid;
+  text-align: center;
+}
+td{
+	    padding: 4px 0px 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
