@@ -1,0 +1,32 @@
+.InputString{
+     background-color: white;
+    border: 1.5px solid rgb(125,173,219);
+    padding: 25px 25px 25px 25px;
+    font-weight: bolder;
+    font-style: italic;
+    padding-bottom: 25px;
+}
+.slds-align_absolute-center{
+    height: 5rem;
+    font-weight: bolder;
+    font-size: xx-large;
+    font-style: italic;
+    color: darkblue;
+}
+.error{
+    color: red;
+}
+/* .inputSpan{
+    color: green;
+    padding-top: 5px;
+} */
+.background{
+    color: red;
+}
+.removebackground{
+    color: green;
+}
+.flexbox{
+    display: flex;
+    justify-content: space-evenly;
+}
