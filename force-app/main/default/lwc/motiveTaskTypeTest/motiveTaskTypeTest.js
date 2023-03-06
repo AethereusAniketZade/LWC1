@@ -7,7 +7,7 @@ export default class MotiveTaskTypeTest extends LightningElement {
     @track eventfire = false;
     @track errorCount = 0;
     @track disabletrue = false;
-    @track temparr2 = [];
+  
 
     @track indexArr = [];
     @track index = 0;
@@ -35,35 +35,35 @@ export default class MotiveTaskTypeTest extends LightningElement {
 
         this.showdata = this.inputData[random];
 
-        console.log('this.showdata--30', this.showdata);
+        // console.log('this.showdata--30', this.showdata);
     }
 
     handlecheck(event) {
 
         let inputTextValue = event.detail.value;
-       
 
         if (this.eventfire == false) {
-             
-          this.timerset = setInterval(() => {
-            this.sec++;
-            if (this.sec == 30) {
-               
-                this.disabletrue = true;
-              
 
-                clearInterval(this.timerset);
-                this.calculateAccuracy();
-                this.calculateWPM();
+            this.timerset = setInterval(() => {
+                this.sec++;
+                if (this.sec == 60) {
 
-            }
-        }, 1000)
-        this.eventfire = true;
+                    this.disabletrue = true;
+
+                    clearInterval(this.timerset);
+                    // this.calculateAccuracy();
+                    // this.calculateWPM();
+
+                }
+            }, 1000)
+            this.eventfire = true;
         }
+
 
 
         if (inputTextValue.length > this.copyInputTextValue.length) {
 
+          // debugger; 
 
             if (this.showdata[this.index] != inputTextValue[this.index]) {
 
@@ -84,14 +84,14 @@ export default class MotiveTaskTypeTest extends LightningElement {
             newarray.splice(newarray.length - 1, 1)
             this.copyInputTextValue = newarray;
             this.index--;
-
-            console.log('check indexArr value', this.indexArr);
-            console.log('check index value', this.index);
+            // debugger;
+            // console.log('check indexArr value', this.indexArr);
+            // console.log('check index value', this.index);
 
             if (this.indexArr.includes(this.index)) {
-                const i = this.indexArr.indexOf(this.index)
+                const i = this.indexArr.indexOf(this.index);
 
-                if (i > -1) {
+                if (i > -1) { 
                     this.indexArr.splice(i, 1);
                     this.error--;
                     console.log('After splice', JSON.stringify(this.indexArr));
@@ -101,6 +101,12 @@ export default class MotiveTaskTypeTest extends LightningElement {
 
 
         }
+        if (inputTextValue.length === this.showdata.length) {
+            // console.log('Inside string Match with Original String');
+            this.disabletrue = true;
+        }
+        //  this.calculateAccuracy();
+        // this.calculateWPM();
 
     }
 
@@ -118,27 +124,30 @@ export default class MotiveTaskTypeTest extends LightningElement {
         clearInterval(this.timerset);
 
         this.totalSecondTaken = this.sec;
+        // this.calculateAccuracy();
+        //  this.calculateWPM();
+
+        this.disabletrue = true;
 
         this.sec = 0;
 
-        this.calculateWPM();
+
     }
- 
-   calculateAccuracy(){
-       console.log('this.index',this.index);
-       console.log('this.totalError',this.totalError);
 
-       console.log('Formula--'+Math.round(((this.index-this.totalError)*100)/this.index));
-        this.accuracy= Math.round(((this.index-this.totalError)*100)/this.index);
-   }
+    get calculateAccuracy() {
+        //    console.log('this.index',this.index);
+     
+        //    correct key value : this.index - this.totalError;
+        
+        return Math.round(((this.index - this.totalError) * 100) / this.index);
+    }
 
-   calculateWPM(){
-    //    console.log('calculate Sec WPM'+this.sec);
-    //    console.log('calculate index WPM'+this.index);
-    //     console.log('Formula--'+Math.round((this.index*60)/(this.sec)));
-        this.wpm = Math.round((this.index*60)/(this.sec));
+    get calculateWPM() {
 
-   }
+        //this.wpm = Math.round((this.index*60)/(this.sec));
+        return Math.round((this.index * 60) / (this.sec));
+
+    }
 
 
 
